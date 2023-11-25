@@ -13,11 +13,11 @@ module.exports = {
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
-        '.grid-cols-custom': {
-          gridTemplateColumns: '1fr min(1140px, 94%) 1fr',
+        ".grid-cols-custom": {
+          gridTemplateColumns: "1fr min(1140px, 94%) 1fr",
         },
       };
-      addUtilities(newUtilities, ['responsive', 'hover']);
+      addUtilities(newUtilities, ["responsive", "hover"]);
     },
   ],
 };
