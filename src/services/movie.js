@@ -1,10 +1,12 @@
 export async function getStaticProps() {
-    const response = await fetch('https://api.example.com/about-data');
-    const data = await response.json();
-  
-    return {
-      props: {
-        data,
-      },
-    };
-  }
+  const url =
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.api_key}&language=en-US&page=1`;
+
+  const response = await fetch(url);
+  const fetchdata = await response.json();
+  const data = await fetchdata.results;
+  return {
+    data,
+  };
+}
+
