@@ -1,7 +1,9 @@
 import React from "react";
 import NotFound from "./not-found";
-
+import { FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
 function MovieDetail({ data }) {
+  console.log(data);
   if (!data.title) {
     return <NotFound />;
   }
@@ -27,13 +29,17 @@ function MovieDetail({ data }) {
               {data.production_companies[0].name}
             </p>
           </div>
-          <p className="text-[64px] mt-5 text-[#C89F65]">
-            {data.original_title}
-          </p>
+          <Link href={data.homepage} className="text-[64px] mt-5 text-[#C89F65] flex items-center ">
+            {data.original_title} <FaExternalLinkAlt fontSize={30} className="ml-5 align-middle"/>
+          </Link>
         </div>
         <div className="line w-full h-1 bg-white "></div>
         <div className="p-10">
-          <p className="text-white text-2xl">{data.overview.slice(0, 150)}</p>
+          <p className="text-white text-2xl">
+            {data.overview.length > 200
+              ? data.overview.slice(0, 200) + "..."
+              : data.overview}
+          </p>
         </div>{" "}
       </div>
     </div>

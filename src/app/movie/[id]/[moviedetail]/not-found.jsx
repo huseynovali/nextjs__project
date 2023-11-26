@@ -1,14 +1,13 @@
-import Link from 'next/link'
- 
-export default async function NotFound() {
+import Link from "next/link";
 
+export default async function NotFound() {
   return (
-    <div>
-      <h2>Not Found: </h2>
-      <p>Could not find requested resource</p>
+    <div className="absolute w-full h-screen bg-slate-600 text-white flex flex-col justify-center items-center z-50">
+      <h2 className="text-[50px]">Movie not found !</h2>
+
       <p>
-        View <Link href="/blog">all posts</Link>
+        <Link href="/">Go Back</Link>
       </p>
     </div>
-  )
+  );
 }
