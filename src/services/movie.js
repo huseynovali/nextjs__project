@@ -6,7 +6,7 @@ export async function getStaticProps(title) {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzFkNDQ5MmJkNjM3NjEzZGNkNWUwM2QxMGFkNDA2ZiIsInN1YiI6IjYzMWQwODQ1ZmE0MDQ2MDA4MzY5ZWM3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.itPWVA8o2zDG_VsewyxojbcHBEvwVTNSWC6MeHny-Uc'
+      Authorization: process.env.api_key
     }
   };
   const response = await fetch(url,options);
