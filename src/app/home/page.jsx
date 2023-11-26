@@ -9,10 +9,11 @@ async function Home() {
   const { fetchdata: data } = await getStaticProps("popular");
 
   return (
-    <Container >
-      <div className="grid grid-cols-4  gap-10  ">
+    <Container>
+      
+      <div className="grid grid-cols-4  gap-10  bg-cyan-900 ">
         {data.results.map((x) => (
-          <Link href={`movie/${x.id}`}>
+          <Link href={`movie/${x.id}`} key={x.div}>
             <div className="w-full h-[300px] relative">
               <Image
                 src={`https://image.tmdb.org/t/p/original/${x.poster_path}`}

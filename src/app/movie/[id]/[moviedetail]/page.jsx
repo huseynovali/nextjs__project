@@ -3,12 +3,11 @@ import NotFound from "./not-found";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 function MovieDetail({ data }) {
-  console.log(data);
   if (!data.title) {
     return <NotFound />;
   }
   return (
-    <div className="bg-cyan-950 relative h-screen">
+    <div className="bg-cyan-950 relative h-screen ">
       <div
         className={`h-full w-full relative  bg-cover bg-center  bg-no-repeat`}
         style={{
@@ -29,8 +28,13 @@ function MovieDetail({ data }) {
               {data.production_companies[0].name}
             </p>
           </div>
-          <Link href={data.homepage} className="text-[64px] mt-5 text-[#C89F65] flex items-center ">
-            {data.original_title} <FaExternalLinkAlt fontSize={30} className="ml-5 align-middle"/>
+          <Link
+            href={data.homepage}
+            target="_blank"
+            className="text-[64px] mt-5 text-[#C89F65] flex items-center "
+          >
+            {data.original_title}{" "}
+            <FaExternalLinkAlt fontSize={30} className="ml-5 align-middle" />
           </Link>
         </div>
         <div className="line w-full h-1 bg-white "></div>
