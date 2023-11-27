@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
+import Link from "next/link";
 
 function HomeSlider({ data }) {
   return (
@@ -23,15 +24,15 @@ function HomeSlider({ data }) {
               backgroundImage: `url(https://image.tmdb.org/t/p/original/${x.poster_path})`,
             }}
           >
+             
             <div className="cover absolute w-full h-full bg-black bg-opacity-50"></div>
             <div className="text-white h-full flex flex-col justify-end pl-20 w-[700px] relative z-30 pb-20">
               <p className="text-[50px]">{x.title}</p>
-              <div className="lene  h-[2px] bg-white"></div>
+              <div className="line h-[2px] bg-white"></div>
               <p className="text-[25px]">
-                {x.overview.length > 200
-                  ? x.overview.slice(0, 200) + "..."
-                  : x.overview}
+              {x.overview.split(" ").slice(0, 20).join(" ") + ' . . .'}
               </p>
+              <Link href={`movie/${x.id}`} className="my-3 text-blue-500 text-xl">Film Detail</Link>
             </div>
           </SwiperSlide>
         ))}
