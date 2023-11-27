@@ -12,10 +12,9 @@ async function Home() {
   console.log(now__data);
   return (
     <div>  
-       <HomeSlider data={now__data} />
+     <HomeSlider data={now__data} />
       <Container>
-     
-        <div className="grid grid-cols-4  gap-10  bg-cyan-900 ">
+        <div className="grid grid-cols-4  gap-10  bg-cyan-900 py-20">
           {pop_data.results.map((x) => (
             <Link href={`movie/${x.id}`} key={x.div}>
               <div className="w-full h-[300px] relative">
