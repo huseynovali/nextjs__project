@@ -9,3 +9,19 @@
 body{
     background-color: #164E63;
 }
+
+.hompage__slider .swiper-button-next::after {
+    @apply text-xs text-white;
+  }
+  
+  .hompage__slider .swiper-button-next {
+    @apply h-10 w-10 bg-transparent border-2 border-white  px-5 rounded-full left-32 top-[calc(100%_-_40px)];
+  }
+  
+  .hompage__slider .swiper-button-prev::after {
+    @apply text-xs text-white z-0;
+  }
+  
+  .hompage__slider .swiper-button-prev {
+    @apply h-10 w-10 bg-transparent border-2 border-white  px-5 rounded-full left-20 top-[calc(100%_-_40px)];
+  }
