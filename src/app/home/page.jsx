@@ -1,10 +1,10 @@
 import Container from "@/components/Container";
-import HomeSlider from "@/components/HomeSlider";
 import { getStaticProps } from "@/services/movie";
 import Image from "next/image";
 import Link from "next/link";
 
-import React from "react";
+import React, { lazy } from "react";
+const HomeSlider = lazy(() => import('@/components/HomeSlider'));
 
 async function Home() {
   const { fetchdata: pop_data } = await getStaticProps("popular");
