@@ -9,18 +9,19 @@ import React from "react";
 async function Home() {
   const { fetchdata: pop_data } = await getStaticProps("popular");
   const { fetchdata: now__data } = await getStaticProps("now_playing");
-  console.log(now__data);
   return (
-    <div>  
-     <HomeSlider data={now__data} />
+    <div>
+      <HomeSlider data={now__data} />
       <Container>
         <div className="grid grid-cols-4  gap-10  bg-cyan-900 py-20">
           {pop_data.results.map((x) => (
             <Link href={`movie/${x.id}`} key={x.div}>
-              <div className="w-full h-[300px] relative">
+              <div className="w-full h-[300px]  relative">
                 <Image
                   src={`https://image.tmdb.org/t/p/original/${x.poster_path}`}
-                  fill={true}
+                  fill
+                  sizes="(min-width: 808px) 50vw, 100vw"
+                  alt={x.title}
                 />
               </div>
               <div>{x.title}</div>

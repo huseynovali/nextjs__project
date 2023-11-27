@@ -19,6 +19,7 @@ function HomeSlider({ data }) {
       >
         {data.results.map((x) => (
           <SwiperSlide
+          key={x.id}
             className="w-full  bg-[length:100%_120%] bg-no-repeat  bg-center"
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/original/${x.poster_path})`,
